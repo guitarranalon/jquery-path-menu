@@ -1,0 +1,72 @@
+@import "compass/reset","compass/css3";
+
+body{
+	background:#fff;
+	color:#333;
+}
+
+.circle-container{
+	position:fixed;
+	bottom:10px;
+	left:10px;
+	z-index:100;
+    @include box-shadow(0 0 10px rgba(0,0,0,0.7));
+    @include border-radius(20px);
+}
+
+.circle{
+    border:0;
+    font-size:30px;
+    line-height:40px;
+    text-align:center;
+    padding:0px;
+	background:#e85738;
+	color:#fff;
+	height:40px;
+	width:40px;
+
+	@include linear-gradient(color-stops(#e85738, #cb2c16));
+    @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3));
+	@include border-radius(20px);
+	
+    &:active:before{
+        content:"";
+        display:block;
+        position:absolute;
+        top:-6px;left:-8px;right:-2px;bottom:-3px;
+        background:rgba(0,0,0,0.3);
+        pointer-events:none;
+        @include border-radius(25px);
+    }	
+}
+
+label button:hover{
+	cursor:pointer;
+}
+
+label button:active{
+	position:static;
+	margin:0;
+	padding:0;
+}
+
+.js .items li{
+	position:fixed;
+	left:20px;
+	bottom:20px;
+}
+
+.items li{
+	z-index:1;
+    display:block;
+    height:26px;width:26px;
+	background:#666;
+    color:white;
+    text-align:center;
+    line-height:26px;
+    font-size:18px;
+	
+    @include box-shadow(0 0 0 4px white, 0 0 0 5px rgba(0,0,0,0.3), inset 0 0 1px black);
+    @include linear-gradient(color-stops(#433f3c, #44403d));
+    @include border-radius(13px);
+}
